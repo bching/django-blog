@@ -1,0 +1,7 @@
+*.swp
+lib/
+bin/
+include/
+db.sqlite3
+pip-selfcheck.json
+.Python
