@@ -1,4 +1,10 @@
 *.swp
+*.pyc
+*~
+__pychache__
+myvenv
+/static
+.DS_STORE
 lib/
 bin/
 include/
