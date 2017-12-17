@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<div class="page-header">
+  <div class="page-header-position">
+    <div class="site-title">
+      <h1><a href="/">Boyd's head is in the clouds</a></h1>
+    </div>
+    <div class="logo">
+      <img class="profile-image" src="{% static 'images/face-portrait.JPG' %}">
+    </div>
+    {% if user.is_authenticated %}
+      <a href="{% url 'post_new' %}" class="top-menu">
+        <span style="background-image: url("/blog/static/images/Flat_plus_icon.svg")"</a>
+    {% endif %}
+    <div class="social-links">
+      <a class="github-mark" href="/"><img src="{%static 'images/GitHub-Mark-120px-plus.png' %}" ></img></a>
+    </div>
+    <a href="/">email me</a>
+  </div>
+</div>

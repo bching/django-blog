@@ -1,21 +1,102 @@
-.page-header {
-  background-color: #ff9400;
-  margin-top: 0;
-  padding: 20px 20px 20px 40px;
+/* 
+ * TODO: categorize rule sets
+ */
+
+html {
+  padding: 0px;
+  margin: 0px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+/*
+ * Site header 
+ */
+.page-header {
+  /*padding: 20px 20px 20px 40px;*/
+  padding: 0;
+}
+
+.page-header-position {
+  background: url("/blog/static/images/Free_Sky_1.jpg")
+    no-repeat center center;
+  height: 300px;
+  display: flex;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+}
+.profile-image {
+  border-radius: 50%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.site-title h1, .site-title h1 a, .site-title h1 a:visited
+.site-title h1 a:active {
+  display: flex;
+  align-items: center;
+  background-color: #787878;
+  margin: 10px 20px;
+  border-radius: 25px;
   color: #ffffff;
   font-size: 36pt;
   text-decoration: none;
 }
 
+/*
+.nav-list ul {
+  list-style-type: none;
+  display: inline;
+}
+.nav-list ul li {
+  display: inline;
+  background-color: #ff9400;
+  margin-left: 5px;
+  padding: 5px;
+  transition: border-radius 0.5s;
+}
+.nav-list ul li:hover {
+  border-radius: 10px;
+}
+.nav-list ul a{
+  text-decoration: none;
+  color: #ffffff;
+}
+*/
+
+.social-links {
+  height: 30px;
+  width: 30px;
+}
+.github-mark {
+  height: 120px;
+  width: 120px;
+}
+.github-mark img {
+  width: 100%;
+  height: auto%;
+}
+
+/* 
+ * Main Content 
+ */
 .content {
-  margin-left: 40px;
+  background-color: #F8F8F8;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .date {
@@ -44,3 +125,4 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
   color: #000000;
 }
+
