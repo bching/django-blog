@@ -15,7 +15,14 @@
   {% include 'blog/header.html' %}
 
   <div class="content">
-    {% block content %}{% endblock %}
+    <div class="column-left">=
+			Lorem ipsum dolor sit amet, posse erant adversarium cu mei, tation imperdiet hendrerit ea vel, vis saepe iisque definiebas eu. Elitr noster et usu. Latine suscipit eloquentiam at vis. Eos possim expetenda id, in alterum assentior scripserit mei, cu falli suscipiantur nec. Ei invidunt patrioque nec, vim ut nominati conceptam.
+			{% include 'blog/post_list.html' %}
+		</div>
+		<div class="column-right">
+			{% include 'blog/post_display.html' %}
+			{% block content %}{% endblock %}
+		</div>
   </div>
 </body>
 </html>

@@ -31,7 +31,6 @@ html {
 .logo {
   height: 150px;
   width: 150px;
-  background-color: red;
   /*display: flex;
   justify-content: center;
   align-items: center;*/
@@ -40,6 +39,12 @@ html {
   border-radius: 50%;
   max-height: 100%;
   max-width: 100%;
+  -webkit-filter: brightness(100%);
+  transition: all 0.2s ease;
+}
+.profile-image:hover {
+  -webkit-filter: brightness(70%);
+  transition: all 0.2s ease;
 }
 
 .site-title h1, .site-title h1 a, .site-title h1 a:visited
@@ -86,13 +91,29 @@ html {
 .github-mark img {
   width: 100%;
   height: auto%;
+  -webkit-filter: brightness(100%);
+  transition: all 0.2s ease;
+}
+.github-mark img:hover {
+  -webkit-filter: brightness(70%);
+  transition: all 0.2s ease;
 }
 
 /* 
  * Main Content 
  */
 .content {
+  display: flex;
+}
+
+.column-left {
+  background-color: pink;
+  width: 300px;
+}
+
+.column-right {
   background-color: #F8F8F8;
+  width: 100%;
 }
 
 h1, h2, h3, h4 {
