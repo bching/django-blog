@@ -1,4 +1,4 @@
-/* 
+/*
  * TODO: categorize rule sets
  */
 
@@ -6,9 +6,12 @@ html {
   padding: 0px;
   margin: 0px;
 }
+a {
+  text-decoration: none;
+}
 
 /*
- * Site header 
+ * Site header
  */
 .page-header {
   /*padding: 20px 20px 20px 40px;*/
@@ -16,9 +19,10 @@ html {
 }
 
 .page-header-position {
-  background: url("/blog/static/images/Free_Sky_1.jpg")
-    no-repeat center center;
-  height: 300px;
+  /*background: url("/blog/static/images/Free_Sky_1.jpg")
+    no-repeat center center;*/
+  background-color: #A9A9A9;
+  height: 150px;
   display: flex;
   top: 0;
   left: 0;
@@ -28,7 +32,22 @@ html {
   width: 100%;
 }
 
-.logo {
+.page-footer-position {
+  height: 150px;
+  width: 100%;
+}
+.footer-content {
+  align-items: center;
+  background-color: #202020;
+  justify-content: center;
+  display: flex;
+}
+.footer-content h6 {
+  color: white;
+  padding: 5px;
+}
+
+/* .logo {
   height: 150px;
   width: 150px;
   /*display: flex;
@@ -45,7 +64,7 @@ html {
 .profile-image:hover {
   -webkit-filter: brightness(70%);
   transition: all 0.2s ease;
-}
+} */
 
 .site-title h1, .site-title h1 a, .site-title h1 a:visited
 .site-title h1 a:active {
@@ -79,6 +98,21 @@ html {
   color: #ffffff;
 }
 */
+.site-nav {
+  height: 50px;
+  width: 100%;
+}
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-nav li {
+  list-style-type: none;
+  margin: 5px;
+  padding: 0 5px;
+  background-color: white;
+}
 
 .social-links {
   height: 30px;
@@ -99,15 +133,15 @@ html {
   transition: all 0.2s ease;
 }
 
-/* 
- * Main Content 
+/*
+ * Main Content
  */
 .content {
   display: flex;
+  align-items: flex-start;
 }
 
 .column-left {
-  background-color: pink;
   width: 300px;
 }
 
@@ -146,4 +180,3 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
   color: #000000;
 }
-

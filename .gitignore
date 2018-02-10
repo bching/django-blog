@@ -1,6 +1,7 @@
 *.swp
 *.pyc
 *~
+*.bak
 __pychache__
 myvenv
 /static

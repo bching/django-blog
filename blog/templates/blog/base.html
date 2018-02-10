@@ -7,22 +7,40 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">!-->
   <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type='text/css'>
-
-<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 </head>
 
 <body>
   {% include 'blog/header.html' %}
 
-  <div class="content">
-    <div class="column-left">=
-			Lorem ipsum dolor sit amet, posse erant adversarium cu mei, tation imperdiet hendrerit ea vel, vis saepe iisque definiebas eu. Elitr noster et usu. Latine suscipit eloquentiam at vis. Eos possim expetenda id, in alterum assentior scripserit mei, cu falli suscipiantur nec. Ei invidunt patrioque nec, vim ut nominati conceptam.
-			{% include 'blog/post_list.html' %}
-		</div>
-		<div class="column-right">
-			{% include 'blog/post_display.html' %}
-			{% block content %}{% endblock %}
-		</div>
-  </div>
+	<div class="content">
+    <div class="column-left">
+      {% block column-left %}
+        {% for post in posts %}
+          <ul><a class="post-link" href="/post/{{ post.pk }}">{{ post.title }}</a></ul>
+        {% endfor %}
+      {% endblock %}
+    </div>
+
+    <div class="column-right">
+      <div class="post">
+        {% block column-right %}
+          {% with posts|first as first_post %}
+            <h1>{{ first_post.title }}</h1>
+            {% if first_post.published_date %}
+              <div class="date">
+                {{ first_post.published_date }}
+              </div>
+            {% endif %}
+            <p>{{ first_post.text|linebreaksbr }}</p>
+          {% endwith %}
+        {% endblock %}
+      </div>
+    </div>
+
+	</div>
+
+  {% include 'blog/footer.html' %}
+  <!--<script src="{% static 'js/base.js' %}"></script>!-->
 </body>
 </html>

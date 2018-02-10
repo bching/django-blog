@@ -1,19 +1,7 @@
 {% extends 'blog/base.html' %}
 
-{% block content %}
-  <!--
-    <div class="post">
-      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <p>{{ post.text|linebreaksbr }}</p>
-      <div class="date">
-        <p>published: {{ post.published_date }}</p>
-      </div>
-    </div>!-->
-    <div class="post">
-      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <p>{{ post.text|linebreaksbr }}</p>
-      <div class="date">
-        <p>published: {{ post.published_date }}</p>
-      </div>
-    </div>
+{% block column-left %}
+  {% for post in posts %}
+    <ul><a class="post-link" href="/post/{{ post.pk }}">{{ post.title }}</a></ul>
+  {% endfor %}
 {% endblock %}
