@@ -1,7 +1,6 @@
-/*
- * TODO: categorize rule sets
- */
-
+#zero-margin-ul {
+  margin-left: -40px;
+}
 html {
   padding: 0px;
   margin: 0px;
@@ -9,33 +8,28 @@ html {
 a {
   text-decoration: none;
 }
+h1, h2, h3, h4 {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 /*
  * Site header
  */
 .page-header {
-  /*padding: 20px 20px 20px 40px;*/
   padding: 0;
+  background-color: #404040;
 }
 
 .page-header-position {
-  /*background: url("/blog/static/images/Free_Sky_1.jpg")
-    no-repeat center center;*/
-  background-color: #A9A9A9;
-  height: 150px;
+  height: 80px;
   display: flex;
   top: 0;
   left: 0;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
 }
 
-.page-footer-position {
-  height: 150px;
-  width: 100%;
-}
 .footer-content {
   align-items: center;
   background-color: #202020;
@@ -47,90 +41,63 @@ a {
   padding: 5px;
 }
 
-/* .logo {
-  height: 150px;
-  width: 150px;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
+.site-title {
+  position: relative;
+  display: inline-block;
 }
-.profile-image {
-  border-radius: 50%;
-  max-height: 100%;
-  max-width: 100%;
-  -webkit-filter: brightness(100%);
-  transition: all 0.2s ease;
-}
-.profile-image:hover {
-  -webkit-filter: brightness(70%);
-  transition: all 0.2s ease;
-} */
-
 .site-title h1, .site-title h1 a, .site-title h1 a:visited
 .site-title h1 a:active {
-  display: flex;
-  align-items: center;
-  background-color: #787878;
-  margin: 10px 20px;
+  margin: 10px 0px;
+  padding: 10px;
   border-radius: 25px;
   color: #ffffff;
   font-size: 36pt;
   text-decoration: none;
 }
 
-/*
-.nav-list ul {
-  list-style-type: none;
-  display: inline;
+.site-title-section {
+  font-size: 24;
+  position: absolute;
+  color: #00CED1;
+  top: 0;
+  margin-top: 25px;
 }
-.nav-list ul li {
-  display: inline;
-  background-color: #ff9400;
-  margin-left: 5px;
-  padding: 5px;
-  transition: border-radius 0.5s;
-}
-.nav-list ul li:hover {
-  border-radius: 10px;
-}
-.nav-list ul a{
-  text-decoration: none;
-  color: #ffffff;
-}
-*/
+
 .site-nav {
-  height: 50px;
   width: 100%;
 }
 .site-nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  width: 600px;
+  margin: auto;
 }
 .site-nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 50px;
   list-style-type: none;
   margin: 5px;
-  padding: 0 5px;
-  background-color: white;
+}
+
+.site-nav a {
+  display: block;
+  color: white;
+  -webkit-filter: brightness(100%);
+  transition: all 0.2s ease;
+}
+.site-nav a:hover {
+  -webkit-filter: brightness(70%);
+  transition: all 0.2s ease;
 }
 
 .social-links {
   height: 30px;
   width: 30px;
-}
-.github-mark {
-  height: 120px;
-  width: 120px;
-}
-.github-mark img {
-  width: 100%;
-  height: auto%;
-  -webkit-filter: brightness(100%);
-  transition: all 0.2s ease;
-}
-.github-mark img:hover {
-  -webkit-filter: brightness(70%);
-  transition: all 0.2s ease;
 }
 
 /*
@@ -139,19 +106,18 @@ a {
 .content {
   display: flex;
   align-items: flex-start;
+  height: 80vh;
 }
 
 .column-left {
   width: 300px;
+  height: 100%;
 }
 
 .column-right {
   background-color: #F8F8F8;
   width: 100%;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Ubuntu', sans-serif;
+  height: 100%;
 }
 
 .date {
@@ -175,6 +141,7 @@ h1, h2, h3, h4 {
 
 .post {
   margin-bottom: 70px;
+  margin-left: 40px;
 }
 
 .post h1 a, .post h1 a:visited {
