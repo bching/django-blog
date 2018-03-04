@@ -1,20 +1,28 @@
 #zero-margin-ul {
   margin-left: -40px;
 }
-html {
+
+html, body {
   padding: 0px;
   margin: 0px;
 }
+
 a {
   text-decoration: none;
 }
+
 h1, h2, h3, h4 {
   font-family: 'Ubuntu', sans-serif;
+}
+
+.round {
+  border-radius: 50%;
 }
 
 /*
  * Site header
  */
+
 .page-header {
   padding: 0;
   background-color: #404040;
@@ -95,18 +103,14 @@ h1, h2, h3, h4 {
   transition: all 0.2s ease;
 }
 
-.social-links {
-  height: 30px;
-  width: 30px;
-}
-
 /*
  * Main Content
  */
+
 .content {
   display: flex;
   align-items: flex-start;
-  height: 80vh;
+  /* height: 80vh; */
 }
 
 .column-left {
@@ -132,6 +136,10 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
+.post-cycle {
+  display: none;
+}
+
 .top-menu, .top-menu:hover, .top-menu:visited {
   color: #ffffff;
   float: right;
@@ -146,4 +154,84 @@ h1, h2, h3, h4 {
 
 .post h1 a, .post h1 a:visited {
   color: #000000;
+}
+
+.content-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-me-picture {
+  border-radius: 50%;
+  max-width:100%;
+  height:auto;
+}
+
+/*
+ * Mobile
+ */
+
+.mobile-nav-container {
+  display: none;
+}
+.mobile-nav-container a {
+  color: #fff;
+}
+
+.mobile-site-nav .nav-items {
+  display: none;
+}
+
+@media screen and (max-width: 820px) {
+  .site-nav .nav-items {
+    display: none;
+  }
+
+  .mobile-nav-container {
+    float: right;
+    display: block;
+    padding: 25px;
+    font-size: 35px;
+    text: #fff;
+  }
+
+  .mobile-site-nav .nav-items-toggle {
+    display: block;
+    position: absolute;
+
+    width: 50%;
+    right: 0;
+  }
+  .mobile-site-nav .nav-items-toggle ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: white;
+  }
+  .mobile-site-nav .nav-items-toggle ul li {
+    padding: 12px 0;
+    text: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .column-left {
+    display: none;
+  }
+
+  .post-cycle {
+    float: right;
+    display: inline-block;
+    position: relative;
+    right: 10px;
+  }
+  .nav-arrow {
+    color: #fff;
+    background-color: #404040;
+    padding: 8px 16px;
+  }
 }

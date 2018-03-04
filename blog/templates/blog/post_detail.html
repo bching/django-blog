@@ -1,18 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block column-left %}
-
-{% for post in post_list %}
-  <ul><a class="post-link" href="/post/{{ post.pk }}">{{ post.title }}</a></ul>
-{% endfor %}
-      {% endblock %}
+  {% for post in post_list %}
+    <ul><a class="post-link" href="/post/{{ post.pk }}">{{ post.title }}</a></ul>
+  {% endfor %}
+{% endblock %}
 
 {% block column-right %}
 <div class="post">
   <h1>{{ post.title }}</h1>
-  <!--{% if user.is_authenticated %}
-    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-  {% endif %}!-->
   {% if post.published_date %}
     <div class="date">
       {{ post.published_date }}

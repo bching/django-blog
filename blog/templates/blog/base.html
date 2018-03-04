@@ -13,7 +13,9 @@
 <body>
   {% include 'blog/header.html' %}
 
+{% block content %}
 	<div class="content">
+
     <div class="column-left">
       {% block column-left %}
         {% for post in posts %}
@@ -23,24 +25,31 @@
     </div>
 
     <div class="column-right">
-      <div class="post">
-        {% block column-right %}
-          {% with posts|first as first_post %}
-            <h1>{{ first_post.title }}</h1>
-            {% if first_post.published_date %}
-              <div class="date">
-                {{ first_post.published_date }}
-              </div>
-            {% endif %}
-            <p>{{ first_post.text|linebreaksbr }}</p>
-          {% endwith %}
-        {% endblock %}
-      </div>
-    </div>
 
+      {% block column-right %}
+        <div class="post">
+          <div class="post-cycle">
+            <a href="#" class="nav-arrow previous round">&#8249;</a>
+            <a href="#" class="nav-arrow next round">&#8250;</a>
+          </div>
+
+            {% with posts|first as first_post %}
+              <h1>{{ first_post.title }}</h1>
+              {% if first_post.published_date %}
+                <div class="date">
+                  {{ first_post.published_date }}
+                </div>
+              {% endif %}
+              <p>{{ first_post.text|linebreaksbr }}</p>
+            {% endwith %}
+          {% endblock %}
+        </div>
+      {% endblock %}
+
+    </div>
 	</div>
 
   {% include 'blog/footer.html' %}
-  <!--<script src="{% static 'js/base.js' %}"></script>!-->
+  <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>

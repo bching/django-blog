@@ -5,21 +5,28 @@
     <div class="site-title">
       <h1><a href="/">BOYD</a><span class="site-title-section">blogs</span></h1>
     </div>
-    <!-- <div class="logo">
-      <img class="profile-image" src="{% static 'images/face-portrait.JPG' %}">
-    </div>
-    {% if user.is_authenticated %}
-      <a href="{% url 'post_new' %}" class="top-menu">
-        <span style="background-image: url("/blog/static/images/Flat_plus_icon.svg")"</a>
-    {% endif %} -->
     <nav class="site-nav">
-      <!-- <ul id="zero-margin-ul"> -->
-      <ul>
-        <li><a href="/"><strong>BLOG</strong></a></li>
-        <li><a href="/"><strong>ABOUT ME</strong></a></li>
-        <li><a class="github-mark" href="https://github.com/bching"><img height="32" width="32" src="{% static 'images/GitHub-Mark-Light-32px.png' %}"></img></a></li>
-        <li><a href="/"><strong>CONTACT ME</strong></a></li>
-      </ul>
+      <div class="nav-items">
+        <ul>
+          <li><a href="/"><strong>BLOG</strong></a></li>
+          <li><a href="/about"><strong>ABOUT ME</strong></a></li>
+          <li><a class="github-mark" href="https://github.com/bching"><img height="32" width="32" src="{% static 'images/GitHub-Mark-Light-32px.png' %}"></img></a></li>
+          <li><a href="/"><strong>CONTACT ME</strong></a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="mobile-nav-container">
+      <a href="javascript:void(0);" class="mobile-nav-button" onclick="toggleMobileNav()">&#9776;</a>
+    </div>
+    <nav class="mobile-site-nav">
+      <div class="nav-items">
+        <ul>
+          <li><a href="/"><strong>BLOG</strong></a></li>
+          <li><a href="/about"><strong>ABOUT ME</strong></a></li>
+          <li><a class="github-mark" href="https://github.com/bching"><strong>GITHUB PAGE</strong></a></li>
+          <li><a href="/"><strong>CONTACT ME</strong></a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </div>

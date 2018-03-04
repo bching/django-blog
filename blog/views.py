@@ -8,9 +8,6 @@ from django.http import HttpResponse
 from .models import Post
 from .forms import PostForm
 
-from snippets.template.ajaxsnippet import render_block_to_string
-from django.template import Context
-
 from datetime import date, datetime
 
 def json_serial(obj):
@@ -26,6 +23,9 @@ def base(request):
     posts = get_post_list(None);
     return render(request, 'blog/base.html', {'posts': posts})
 
+def about_me(request):
+    return render(request, 'blog/about.html')
+    
 def post_list(request):
     posts = getPostList()
     return render(request, 'blog/post_list.html', {'posts': posts})
