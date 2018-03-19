@@ -2,7 +2,7 @@
   margin-left: -40px;
 }
 
-html, body {
+html, body, p {
   padding: 0px;
   margin: 0px;
 }
@@ -121,7 +121,7 @@ h1, h2, h3, h4 {
 .column-right {
   background-color: #F8F8F8;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .date {
@@ -148,23 +148,40 @@ h1, h2, h3, h4 {
 }
 
 .post {
-  margin-bottom: 70px;
-  margin-left: 40px;
+  margin: 0px 40px 70px 40px;
 }
 
 .post h1 a, .post h1 a:visited {
   color: #000000;
 }
 
-.content-about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*
+ * About Page
+ */
+ .content-about {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ .about-me-picture {
+   border-radius: 50%;
+   max-width:100%;
+   height:auto;
+ }
+
+.center-text {
+  display: block;
+  margin: 0px 30px;
+  width: 700px;
 }
-.about-me-picture {
-  border-radius: 50%;
-  max-width:100%;
-  height:auto;
+.center-text p {
+  margin-bottom: 10px;
+}
+
+.first-letter {
+  font-weight: bolder;
+  font-size: 200%;
+  padding-right: 2px;
 }
 
 /*
@@ -225,9 +242,9 @@ h1, h2, h3, h4 {
 
   .post-cycle {
     float: right;
-    display: inline-block;
-    position: relative;
+    display: block;
     right: 10px;
+    /* margin-right: 10px; */
   }
   .nav-arrow {
     color: #fff;

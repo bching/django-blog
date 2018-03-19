@@ -16,7 +16,7 @@ def json_serial(obj):
     raise TypeError('Type %s not serializable' % type(obj))
 
 def get_post_list(self):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=date.today()).order_by('published_date')
     return posts
 
 def base(request):
@@ -25,13 +25,13 @@ def base(request):
 
 def about_me(request):
     return render(request, 'blog/about.html')
-    
+
 def post_list(request):
     posts = getPostList()
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_recent(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).latest('published_date')
+    posts = Post.objects.filter(published_date__lte=date.today()).latest('published_date')
     return render(request, 'blog/post_recent.html', {'post': posts})
 
 def post_detail(request, pk):
@@ -53,7 +53,7 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.published_date = timezone.now()
+            post.published_date = date.today()
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -67,7 +67,7 @@ def post_edit(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.published_date = timezone.now()
+            post.published_date = date.today()
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
