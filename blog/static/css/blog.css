@@ -215,7 +215,6 @@ h1, h2, h3, h4 {
   .mobile-site-nav .nav-items-toggle {
     display: block;
     position: absolute;
-
     width: 50%;
     right: 0;
   }
@@ -232,6 +231,10 @@ h1, h2, h3, h4 {
     border: 1px;
     border-style: solid;
     border-color: black;
+  }
+
+  .center-text {
+    width: auto;
   }
 }
 
@@ -251,4 +254,5 @@ h1, h2, h3, h4 {
     background-color: #404040;
     padding: 8px 16px;
   }
+
 }

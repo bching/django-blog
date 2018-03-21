@@ -1,13 +1,24 @@
 {% extends 'blog/base.html' %}
 
 {% block column-left %}
-  {% for post in post_list %}
+  {% for post in posts %}
     <ul><a class="post-link" href="/post/{{ post.pk }}">{{ post.title }}</a></ul>
   {% endfor %}
 {% endblock %}
 
 {% block column-right %}
 <div class="post">
+  {% block post-cycle %}
+    <div class="post-cycle">
+      {% if post != posts.first %}
+        <a href="/post/{{ prev.0.pk }}" class="nav-arrow previous round">&#8249;</a>
+      {% endif %}
+      {% if post != posts.last %}
+        <a href="/post/{{ next.0.pk }}" class="nav-arrow next round">&#8250;</a>
+      {% endif %}
+    </div>
+  {% endblock %}
+
   <h1>{{ post.title }}</h1>
   {% if post.published_date %}
     <div class="date">

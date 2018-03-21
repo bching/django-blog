@@ -18,3 +18,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def __getitem__(self, item):
+        return getattr(self, item)

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 #from __future__ import unicode_literals
-import json
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
@@ -10,18 +9,16 @@ from .forms import PostForm
 
 from datetime import date, datetime
 
-def json_serial(obj):
-    if isinstance(obj, (datetime, date)):
-        return obj.isoformat()
-    raise TypeError('Type %s not serializable' % type(obj))
-
 def get_post_list(self):
-    posts = Post.objects.filter(published_date__lte=date.today()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=date.today()).order_by('-published_date')
     return posts
 
 def base(request):
-    posts = get_post_list(None);
-    return render(request, 'blog/base.html', {'posts': posts})
+    posts = get_post_list(None)
+    next = posts.filter(published_date__lt=posts.first().published_date)[0:1]
+
+    return render(request, 'blog/base.html', {'posts': posts,
+        'next': next})
 
 def about_me(request):
     return render(request, 'blog/about.html')
@@ -37,13 +34,18 @@ def post_recent(request):
 def post_detail(request, pk):
     if request.method == "GET":
         post = get_object_or_404(Post, pk=pk)
-        post_list = get_post_list(None)
+        posts = get_post_list(None)
 
-        return render(request, 'blog/post_detail.html', {'post': post, 'post_list': post_list})
+        #For mobile nav arrows
+        next = posts.filter(published_date__lt=post.published_date).order_by('published_date')[0:1]
+        prev = posts.filter(published_date__gt=post.published_date).order_by('published_date')[0:1]
+
+        return render(request, 'blog/post_detail.html', {'post': post, 'posts': posts,
+            'next': next, 'prev': prev})
 
     else:
         return HttpResponse(
-            json.dumps({'post error': 'A problem occurred looking for the post'}),
+            json.dumps({'post error': 'A problem occurred while looking for the post'}),
             content_type = 'application/json'
         )
 
