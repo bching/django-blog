@@ -26,22 +26,10 @@
     </div>
 
     <div class="column-right">
-
       {% block column-right %}
       <div class="post">
-        <!-- {% with posts|first as first_post %} -->
         {% block post-cycle %}
           <div class="post-cycle">
-            <!-- {% if post == post_list.first %}
-              <a class="nav-arrow previous round">&#8249;</a>
-            {% else %}
-              <a href="/post/{{ posts.first.pk|add:"-1"}}" class="nav-arrow previous round">&#8249;</a>
-            {% endif %}
-            {% if post == post_list.last %}
-              <a class="nav-arrow next round">&#8250;</a>
-            {% else %}
-              <a href="/post/{{ posts.first.pk|add:"1" }}" class="nav-arrow next round">&#8250;</a>
-            {% endif %} -->
             <a href="/post/{{ next.0.pk }}" class="nav-arrow next round">&#8250;</a>
           </div>
         {% endblock %}
@@ -53,7 +41,6 @@
               </div>
             {% endif %}
           <p>{{ posts.first.text|linebreaksbr }}</p>
-        <!-- {% endwith %} -->
       {% endblock %}
       </div>
       {% endblock %}
