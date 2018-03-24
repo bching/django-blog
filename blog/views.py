@@ -15,10 +15,11 @@ def get_post_list(self):
 
 def base(request):
     posts = get_post_list(None)
-    next = posts.filter(published_date__lt=posts.first().published_date)[0:1]
+    #next = posts.filter(published_date__lt=posts.first().published_date)[0:1]
+    next_post = posts[0:1]
 
     return render(request, 'blog/base.html', {'posts': posts,
-        'next': next})
+        'next_post': next_post})
 
 def about_me(request):
     return render(request, 'blog/about.html')
@@ -37,11 +38,13 @@ def post_detail(request, pk):
         posts = get_post_list(None)
 
         #For mobile nav arrows
-        next = posts.filter(published_date__lt=post.published_date).order_by('published_date')[0:1]
-        prev = posts.filter(published_date__gt=post.published_date).order_by('published_date')[0:1]
+        #next = posts.filter(published_date__lt=post.published_date).order_by('published_date')[0:1]
+        #prev = posts.filter(published_date__gt=post.published_date).order_by('published_date')[0:1]
+        next_post = posts[0:1]
+        prev_post = posts.reverse()[0:1]
 
         return render(request, 'blog/post_detail.html', {'post': post, 'posts': posts,
-            'next': next, 'prev': prev})
+            'next_post': next_post, 'prev_post': prev_post})
 
     else:
         return HttpResponse(

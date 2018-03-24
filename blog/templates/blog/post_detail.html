@@ -11,10 +11,10 @@
   {% block post-cycle %}
     <div class="post-cycle">
       {% if post != posts.first %}
-        <a href="/post/{{ prev.0.pk }}" class="nav-arrow previous round">&#8249;</a>
+        <a href="/post/{{ prev_post.0.pk }}" class="nav-arrow previous round">&#8249;</a>
       {% endif %}
       {% if post != posts.last %}
-        <a href="/post/{{ next.0.pk }}" class="nav-arrow next round">&#8250;</a>
+        <a href="/post/{{ next_post.0.pk }}" class="nav-arrow next round">&#8250;</a>
       {% endif %}
     </div>
   {% endblock %}
