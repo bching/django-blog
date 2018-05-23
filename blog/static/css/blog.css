@@ -15,6 +15,10 @@ h1, h2, h3, h4 {
   font-family: 'Ubuntu', sans-serif;
 }
 
+textarea {
+  resize: none;
+}
+
 .round {
   border-radius: 50%;
 }
@@ -185,13 +189,47 @@ h1, h2, h3, h4 {
 }
 
 /*
+ * Contact Form
+ */
+.contact-modal-toggle {
+  /* display: block; */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+.contact-modal-content {
+  display: none;
+  position: fixed;
+  width: 400px;
+  height: 500px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -250px;
+}
+
+.contact-modal-toggle .contact-modal-content {
+  display: block;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+}
+/*
  * Mobile
  */
 
-.mobile-nav-container {
+.mobile-nav-button {
   display: none;
 }
-.mobile-nav-container a {
+.mobile-nav-button a {
   color: #fff;
 }
 
@@ -204,7 +242,7 @@ h1, h2, h3, h4 {
     display: none;
   }
 
-  .mobile-nav-container {
+  .mobile-nav-button {
     float: right;
     display: block;
     padding: 25px;
@@ -213,10 +251,11 @@ h1, h2, h3, h4 {
   }
 
   .mobile-site-nav .nav-items-toggle {
-    display: block;
-    position: absolute;
-    width: 50%;
-    right: 0;
+    /* display: inline-block; */
+    /* position: relative; */
+    width: 100%;
+    /* right: 0; */
+    /* top: 0; */
   }
   .mobile-site-nav .nav-items-toggle ul {
     list-style: none;

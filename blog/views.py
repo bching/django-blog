@@ -15,8 +15,8 @@ def get_post_list(self):
 
 def base(request):
     posts = get_post_list(None)
-    #next = posts.filter(published_date__lt=posts.first().published_date)[0:1]
-    next_post = posts[0:1]
+    next_post = posts.filter(published_date__lt=posts.first().published_date)[0:1]
+    # next_post = posts[0:1]
 
     return render(request, 'blog/base.html', {'posts': posts,
         'next_post': next_post})
@@ -38,10 +38,10 @@ def post_detail(request, pk):
         posts = get_post_list(None)
 
         #For mobile nav arrows
-        #next = posts.filter(published_date__lt=post.published_date).order_by('published_date')[0:1]
-        #prev = posts.filter(published_date__gt=post.published_date).order_by('published_date')[0:1]
-        next_post = posts[0:1]
-        prev_post = posts.reverse()[0:1]
+        next_post = posts.filter(published_date__lt=post.published_date).order_by('published_date')[0:1]
+        prev_post = posts.filter(published_date__gt=post.published_date).order_by('published_date')[0:1]
+        # next_post = posts[0:1]
+        # prev_post = posts.reverse()[0:1]
 
         return render(request, 'blog/post_detail.html', {'post': post, 'posts': posts,
             'next_post': next_post, 'prev_post': prev_post})
