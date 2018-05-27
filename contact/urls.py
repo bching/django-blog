@@ -7,7 +7,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    # path('contact/', views.ContactView, name='contact'),
-    # path('success/', views.successView, name='success'),
-    url(r'^contact/$', views.ContactView, name='contact'),
+    url(r'^contact/$', views.contact_view, name='contact'),
 ]

@@ -10,7 +10,7 @@
 <div id="contact-modal-wrapper" class="contact-modal">
   <div class="contact-modal-content">
     <button id="modal-close">&times;</button>
-    <form method="post">
+    <form method="post" action="{% url 'contact' %}">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit">Submit</button>
