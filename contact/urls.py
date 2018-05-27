@@ -9,6 +9,5 @@ from . import views
 urlpatterns = [
     # path('contact/', views.ContactView, name='contact'),
     # path('success/', views.successView, name='success'),
-    url(r'contact/', views.contactView, name='contact'),
-    url(r'success/', views.successView, name='success'),
+    url(r'^contact/$', views.ContactView, name='contact'),
 ]

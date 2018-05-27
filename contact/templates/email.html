@@ -1,8 +1,18 @@
-<h1> Contact me </h1>
+<!-- <h1> Contact me </h1>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <div class="form-actions">
     <button type="submit">Send</button>
   </div>
-</form>
+</form> -->
+
+<div id="contact-modal-wrapper" class="contact-modal">
+  <div class="contact-modal-content">
+    <button id="modal-close">&times;</button>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+  </div>
+</div>

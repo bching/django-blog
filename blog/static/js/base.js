@@ -1,3 +1,4 @@
+// Utility method to add and remove toggle to element's class name
 function addRemoveToggle(inputElement) {
   switch(inputElement.className) {
     case 'nav-items':
@@ -35,6 +36,9 @@ function clickHandler(e) {
     if(e.target.id != "contact-modal-content")
       closeModal(e);
   }
+  else if(e.target.id == "modal-close") {
+    closeModal(e);
+  }
 }
 function keyHandler(e) {
   if(e.keyCode == 27)
@@ -46,5 +50,3 @@ function closeModal(e) {
 
 document.addEventListener('click', clickHandler, false);
 document.addEventListener('click', keyHandler, false);
-
-// Utility method to add and remove toggle to element's class name
