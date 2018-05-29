@@ -33,8 +33,9 @@ var modalCloseButton = document.getElementById('modal-close');
 
 function clickHandler(e) {
   if(e.target.tagName == "DIV") {
-    if(e.target.id != "contact-modal-content")
+    if(e.target.id != "contact-modal-wrapper") {
       closeModal(e);
+    }
   }
   else if(e.target.id == "modal-close") {
     closeModal(e);

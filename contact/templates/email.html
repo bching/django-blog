@@ -8,11 +8,27 @@
 </form> -->
 
 <div id="contact-modal-wrapper" class="contact-modal">
-  <div class="contact-modal-content">
-    <button id="modal-close">&times;</button>
-    <form method="post" action="{% url 'contact' %}">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Submit</button>
+  <div id="contact-modal-content" class="contact-modal-content">
+    <button id="modal-close">&#10006;</button>
+    <div id="form-container" class="form-container">
+      <form id="contact-form" method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <p>
+          <label for="email"><span>Email</span>
+          </label>
+          {{ form.from_email }}
+        </p>
+        <p>
+          <label for="subject"><span>Subject</span>
+          </label>
+          {{ form.subject }}
+        </p>
+        <p>
+          <label for="message"><span>Message</span>
+          </label>
+          {{ form.message }}
+        </p>
+        <button type="submit">Submit</button>
+    </div>
   </div>
 </div>
